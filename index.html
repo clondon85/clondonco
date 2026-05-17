@@ -231,14 +231,22 @@
   .btn-ghost:hover { color: var(--cream); }
 
   .hero-photo {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
     height: 340px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    outline: 2px solid var(--magenta);
+    outline-offset: 7px;
   }
 
   .hero-photo::after {
@@ -525,15 +533,6 @@
 
   .wi-arrow {
     display: none;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-    flex: 1;
   }
 
   .wf-img-link { display: block; flex: 1; overflow: hidden; }
@@ -975,7 +974,6 @@
       </div>
       <div class="hero-photo">
         <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/chelsea.jpg" alt="Chelsea London Phillips" class="hero-img">
-        <div class="photo-tag">Chelsea London Phillips · <span>Instructional Designer</span></div>
       </div>
     </div>
   </section>
