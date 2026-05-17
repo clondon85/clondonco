@@ -46,9 +46,9 @@
   /* ── NAV ── */
   nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 20px 32px;
+    padding: 18px 32px;
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
@@ -471,7 +471,23 @@
     margin-bottom: 5px;
   }
 
-  .wi-tool {
+  .wi-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 5px;
+  }
+
+  .wi-try {
+    font-size: 11px;
+    color: var(--teal);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(0,191,179,0.3);
+    padding-bottom: 1px;
+    flex-shrink: 0;
+  }
     font-size: 12px;
     color: var(--teal);
     letter-spacing: 0.08em;
@@ -768,7 +784,6 @@
 
 <div class="page">
   <nav>
-    <span class="nav-logo">CLP</span>
     <ul class="nav-links">
       <li><a href="#work">photography</a></li>
       <li><a href="#contact">contact</a></li>
@@ -873,7 +888,7 @@
         <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/photoclass.jpg" alt="Photoclass project screenshot" class="wi-img">
         <div>
           <span class="wi-num">02</span>
-          <div class="wi-title">Photoclass</div>
+          <div class="wi-title-row"><div class="wi-title">Photoclass</div><span class="wi-try">Try this experience</span></div>
           <div class="wi-tool">Rise · MightyWorks · HTML/CSS/JS · Camtasia</div>
           <div class="wi-tags"><p>A fully text-based photography course redesigned as a multi-module interactive experience.</p><p>Passive reading was replaced with explainer videos, guided reflections, and hands-on composition activities, giving learners structured practice at every stage rather than content to scroll through.</p></div>
         </div>
@@ -882,7 +897,7 @@
         <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/leadership.jpg" alt="Ethical Leadership project screenshot" class="wi-img">
         <div>
           <span class="wi-num">03</span>
-          <div class="wi-title">Ethical Leadership</div>
+          <div class="wi-title-row"><div class="wi-title">Ethical Leadership</div><span class="wi-try">Try this experience</span></div>
           <div class="wi-tool">Storyline · Photoshop · Descript · Synthesia</div>
           <div class="wi-tags"><p>A branching scenario for managers navigating decisions that sit at the intersection of profitability, ethics, and team leadership.</p><p>Real-time decision meters and consequence gauges make the downstream impact of each choice visible, building judgment through practice rather than instruction.</p></div>
         </div>
@@ -894,7 +909,7 @@
         </div>
         <div>
           <span class="wi-num">04</span>
-          <div class="wi-title">Figma Tutorial</div>
+          <div class="wi-title-row"><div class="wi-title">Figma Tutorial</div><span class="wi-try">Watch on YouTube</span></div>
           <div class="wi-tool">Camtasia</div>
           <div class="wi-tags"><p>An introductory video tutorial built for graduate students with no prior design tool experience.</p><p>Focused on building enough practical fluency in Figma to begin prototyping, with scoped content that avoids overwhelming new learners with features irrelevant to their immediate goals.</p></div>
         </div>
