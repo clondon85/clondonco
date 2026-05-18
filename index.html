@@ -594,26 +594,32 @@
   }
   .wf-img-link:hover .wf-img { opacity: 0.85; }
 
-  .wi-img {
+  .wi-img-wrap {
     width: 100%;
     height: 180px;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .wi-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 16px;
     transition: opacity 0.2s;
-    flex-shrink: 0;
+    margin-bottom: 0;
+    border-bottom: none;
   }
   .wi:hover .wi-img { opacity: 0.85; }
 
   .wi-yt-thumb {
     position: relative;
     width: 100%;
-    height: 180px;
-    margin-bottom: 16px;
+    height: 100%;
     overflow: hidden;
-    flex-shrink: 0;
   }
   .wi-yt-thumb .wi-img { margin-bottom: 0; height: 100%; }
   .wi-yt-play {
@@ -1109,7 +1115,9 @@
 
     <div class="work-grid fade-up">
       <a class="wi" href="https://thefocalpointhub.com/photoclass-2026/" target="_blank">
-        <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/photoclass.jpg" alt="Photoclass project screenshot" class="wi-img">
+        <div class="wi-img-wrap">
+          <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/photoclass.jpg" alt="Photoclass project screenshot" class="wi-img">
+        </div>
         <div>
           <div class="wi-title-row"><div class="wi-title">Photoclass</div></div>
           <div class="wi-tool">Rise · MightyWorks · HTML/CSS/JS · Camtasia</div>
@@ -1118,7 +1126,9 @@
         </div>
       </a>
       <a class="wi" href="http://ethicalleadership.s3-website-us-east-1.amazonaws.com/" target="_blank">
-        <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/leadership.jpg" alt="Ethical Leadership project screenshot" class="wi-img">
+        <div class="wi-img-wrap">
+          <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/leadership.jpg" alt="Ethical Leadership project screenshot" class="wi-img">
+        </div>
         <div>
           <div class="wi-title-row"><div class="wi-title">Ethical Leadership</div></div>
           <div class="wi-tool">Storyline · Photoshop · Descript · Synthesia</div>
@@ -1127,9 +1137,11 @@
         </div>
       </a>
       <a class="wi" href="https://youtu.be/LMcBbvM1oc8?si=69_fyoMMbYeOV2NT" target="_blank">
-        <div class="wi-yt-thumb">
-          <img src="https://img.youtube.com/vi/LMcBbvM1oc8/maxresdefault.jpg" alt="Figma Tutorial video thumbnail" class="wi-img">
-          <div class="wi-yt-play">&#9654;</div>
+        <div class="wi-img-wrap">
+          <div class="wi-yt-thumb">
+            <img src="https://img.youtube.com/vi/LMcBbvM1oc8/maxresdefault.jpg" alt="Figma Tutorial video thumbnail" class="wi-img">
+            <div class="wi-yt-play">&#9654;</div>
+          </div>
         </div>
         <div>
           <div class="wi-title-row"><div class="wi-title">Figma Tutorial</div></div>
