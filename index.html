@@ -493,6 +493,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 3px;
     margin-top: 3px;
+    align-items: stretch;
   }
 
   .wi, .wi * {
@@ -502,28 +503,21 @@
 
   .wi {
     border: 1px solid var(--border);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 200px;
+    display: grid;
+    grid-template-rows: 180px auto auto 1fr auto;
     background: rgba(255,255,255,0.03);
     text-decoration: none;
     transition: background 0.2s;
     cursor: pointer;
   }
 
-  .wi:hover {
-    background: rgba(255,255,255,0.07);
-  }
+  .wi:hover { background: rgba(255,255,255,0.07); }
 
-  .wi-num {
-    font-size: 12px;
-    color: rgba(240,235,224,0.4) !important;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 10px;
-    display: block;
+  .wi-img-wrap {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
   }
 
   .wi-title {
@@ -532,15 +526,28 @@
     font-weight: 700;
     color: var(--cream) !important;
     line-height: 1.1;
-    margin-bottom: 5px;
+    padding: 20px 24px 0;
   }
 
-  .wi-title-row {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 5px;
+  .wi-tool {
+    font-size: 12px;
+    color: var(--teal) !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 8px 24px 0;
+    font-weight: 500;
   }
+
+  .wi-tags {
+    font-size: 13px;
+    color: rgba(240,235,224,0.7) !important;
+    line-height: 1.7;
+    padding: 12px 24px 0;
+    align-self: start;
+  }
+
+  .wi-tags p { margin-bottom: 10px; }
+  .wi-tags p:last-child { margin-bottom: 0; }
 
   .wi-try {
     display: inline-block;
@@ -550,23 +557,12 @@
     letter-spacing: 0.04em;
     border-bottom: 2px solid rgba(0,191,179,0.4);
     padding-bottom: 2px;
-    align-self: flex-start;
+    margin: 20px 24px 24px;
+    align-self: end;
   }
 
-  .wi-tool {
-    font-size: 12px;
-    color: var(--teal) !important;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-
-  .wi-tags {
-    font-size: 13px;
-    color: rgba(240,235,224,0.7) !important;
-    line-height: 1.7;
-  }
+  .wi-title-row { display: none; }
+  .wi-num { display: none; }
 
   .wi-tags p {
     margin-bottom: 10px;
@@ -662,7 +658,7 @@
   }
 
   .about-label {
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(240,235,224,0.4);
@@ -692,7 +688,7 @@
   }
 
   .trusted-label {
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: rgba(240,235,224,0.4);
@@ -783,6 +779,11 @@
 
   .contact-label {
     grid-column: 1 / -1;
+    font-size: 16px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(240,235,224,0.4);
+    margin-bottom: 20px;
   }
 
   .contact-hed {
@@ -791,14 +792,6 @@
 
   .contact-sub {
     grid-column: 1 / -1;
-  }
-
-  .contact-label {
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(240,235,224,0.4);
-    margin-bottom: 20px;
   }
 
   .contact-hed {
@@ -834,6 +827,7 @@
     text-decoration: none;
     border-bottom: 2px solid var(--magenta);
     padding-bottom: 3px;
+    padding-right: 32px;
     letter-spacing: 0.02em;
     transition: color 0.2s, border-color 0.2s;
     width: fit-content;
@@ -855,6 +849,7 @@
     text-decoration: none;
     border-bottom: 2px solid var(--magenta);
     padding-bottom: 2px;
+    padding-left: 32px;
     font-size: 16px;
     font-weight: 500;
     transition: opacity 0.2s;
@@ -1053,9 +1048,10 @@
 
     <div class="hero-lower fade-up" style="transition-delay:0.15s;">
       <div class="hero-bio">
-        <p>I'm an instructional designer focused on translating complex subject matter into <strong>structured, visually compelling learning experiences</strong> built around skills intelligence, behavioral change, and how people actually develop on the job.</p>
-        <p>My background in live TV, film production, photography, and corporate training shapes how I approach design, production, and the tools I use to build content that holds learner attention.</p>
+        <p>I build structured, visually compelling learning experiences around skills intelligence, behavioral change, and how people actually develop on the job.</p>
+        <p>My background in live TV, film production, photography, and corporate training shapes how I think about pacing, visual storytelling, and designing content that holds learners' attention.</p>
         <p>Currently pursuing a <strong>Doctorate in Instructional Systems &amp; Learning Technologies</strong> at Florida State University.</p>
+        <p>Has strong opinions about the Marissa Cooper arc and design models.</p>
       </div>
       <div class="hero-photo">
         <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/chelsea.jpg" alt="Chelsea London Phillips" class="hero-img">
@@ -1078,6 +1074,7 @@
       <span>Synthesia</span><span class="dot">·</span>
       <span>Claude</span><span class="dot">·</span>
       <span>Agentic Workflows</span><span class="dot">·</span>
+      <span>Kid Pix</span><span class="dot">·</span>
       <span>Articulate Storyline</span><span class="dot">·</span>
       <span>Lectora</span><span class="dot">·</span>
       <span>Camtasia</span><span class="dot">·</span>
@@ -1118,23 +1115,19 @@
         <div class="wi-img-wrap">
           <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/photoclass.jpg" alt="Photoclass project screenshot" class="wi-img">
         </div>
-        <div>
-          <div class="wi-title-row"><div class="wi-title">Photoclass</div></div>
-          <div class="wi-tool">Rise · MightyWorks · HTML/CSS/JS · Camtasia</div>
-          <div class="wi-tags"><p>A fully text-based photography course redesigned as a multi-module interactive experience.</p><p>Passive reading was replaced with explainer videos, guided reflections, and hands-on composition activities, giving learners structured practice at every stage rather than content to scroll through.</p></div>
-          <span class="wi-try">Explore the course</span>
-        </div>
+        <div class="wi-title">Photoclass</div>
+        <div class="wi-tool">Rise · MightyWorks · HTML/CSS/JS · Camtasia</div>
+        <div class="wi-tags"><p>A fully text-based photography course redesigned as a multi-module interactive experience.</p><p>Passive reading was replaced with explainer videos, guided reflections, and hands-on composition activities, giving learners structured practice at every stage rather than content to scroll through.</p></div>
+        <span class="wi-try">Explore the course</span>
       </a>
       <a class="wi" href="http://ethicalleadership.s3-website-us-east-1.amazonaws.com/" target="_blank">
         <div class="wi-img-wrap">
           <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/leadership.jpg" alt="Ethical Leadership project screenshot" class="wi-img">
         </div>
-        <div>
-          <div class="wi-title-row"><div class="wi-title">Ethical Leadership</div></div>
-          <div class="wi-tool">Storyline · Photoshop · Descript · Synthesia</div>
-          <div class="wi-tags"><p>A branching scenario for managers navigating decisions that sit at the intersection of profitability, ethics, and team leadership.</p><p>Real-time decision meters and consequence gauges make the downstream impact of each choice visible, building judgment through practice rather than instruction.</p></div>
-          <span class="wi-try">Step into the scenario</span>
-        </div>
+        <div class="wi-title">Ethical Leadership</div>
+        <div class="wi-tool">Storyline · Photoshop · Descript · Synthesia</div>
+        <div class="wi-tags"><p>A branching scenario for managers navigating decisions that sit at the intersection of profitability, ethics, and team leadership.</p><p>Real-time decision meters and consequence gauges make the downstream impact of each choice visible, building judgment through practice rather than instruction.</p></div>
+        <span class="wi-try">Step into the scenario</span>
       </a>
       <a class="wi" href="https://youtu.be/LMcBbvM1oc8?si=69_fyoMMbYeOV2NT" target="_blank">
         <div class="wi-img-wrap">
@@ -1143,12 +1136,10 @@
             <div class="wi-yt-play">&#9654;</div>
           </div>
         </div>
-        <div>
-          <div class="wi-title-row"><div class="wi-title">Figma Tutorial</div></div>
-          <div class="wi-tool">Camtasia</div>
-          <div class="wi-tags"><p>An introductory video tutorial built for graduate students with no prior design tool experience.</p><p>Focused on building enough practical fluency in Figma to begin prototyping, with scoped content that avoids overwhelming new learners with features irrelevant to their immediate goals.</p></div>
-          <span class="wi-try">Watch on YouTube</span>
-        </div>
+        <div class="wi-title">Figma Tutorial</div>
+        <div class="wi-tool">Camtasia</div>
+        <div class="wi-tags"><p>An introductory video tutorial built for graduate students with no prior design tool experience.</p><p>Focused on building enough practical fluency in Figma to begin prototyping, with scoped content that avoids overwhelming new learners with features irrelevant to their immediate goals.</p></div>
+        <span class="wi-try">Watch on YouTube</span>
       </a>
     </div>
   </section>
@@ -1157,8 +1148,9 @@
     <div class="about-left fade-up">
       <div class="about-label">About</div>
       <p class="about-text">
-        Background in live TV, film production, and photography informs how I use authoring, video production, and design tools to build content that holds attention and transfers to the job.<br><br>
-        Founder of <a href="https://thefocalpointhub.com" target="_blank">Focal Point</a>, a photography education community. Corporate trainer, moderator, writer. <strong>M.S. in Instructional Design &amp; Technology</strong>, Commonwealth University. Graduate certificate in Instructional Game Design.
+        My designs are an extension of who I am. I've worked and lived all over the world, come up through film and photography, and found myself in L&D because it's the natural home for someone who has always been equal parts student, teacher, and visual thinker. Always looking forward. Always referencing something from 2003.<br><br>
+        In 2019 I founded <a href="https://thefocalpointhub.com" target="_blank">Focal Point</a>, a photography education community that grew from a single Instagram hashtag into a global community of 10,000+ photographers.<br><br>
+        First dev project: a Myspace page with abundant GIFs and Death Cab for Cutie on autoplay.
       </p>
     </div>
     <div class="about-right fade-up">
@@ -1167,6 +1159,7 @@
         <span class="trusted-name">The Regis Company</span>
         <span class="trusted-name">Next Street</span>
         <span class="trusted-name">Verizon</span>
+        <span class="trusted-name">Apple</span>
         <span class="trusted-name">Gates Foundation</span>
         <span class="trusted-name">FIFA</span>
         <span class="trusted-name">NYCSBS</span>
@@ -1179,7 +1172,7 @@
   <section class="contact fade-up" id="contact">
     <div class="contact-inner">
       <div class="contact-label">Contact</div>
-      <p class="contact-hed">Interested in working together?</p>
+      <p class="contact-hed">Let's get down to business.</p>
       <p class="contact-sub">I love talking through L&D problems. Let's chat.</p>
       <div>
         <p class="contact-email-label">Call me. Beep me. If you want to reach me.</p>
@@ -1190,7 +1183,7 @@
   </section>
 
   <footer>
-    <span class="footer-mark">clondon.co · 2026</span>
+    <span class="footer-mark">You know you love me. xoxo · clondon.co · 2026</span>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/chelsealondon/" target="_blank">LinkedIn</a>
       <a href="https://clondon.me" target="_blank">clondon.me</a>
