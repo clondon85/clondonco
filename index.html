@@ -492,7 +492,7 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     min-height: 200px;
     background: rgba(255,255,255,0.03);
     text-decoration: none;
@@ -537,7 +537,7 @@
     letter-spacing: 0.04em;
     border-bottom: 2px solid rgba(0,191,179,0.4);
     padding-bottom: 2px;
-    margin-top: 20px;
+    align-self: flex-start;
   }
 
   .wi-tool {
@@ -800,6 +800,13 @@
     margin-bottom: 28px;
   }
 
+  .contact-email-label {
+    font-size: 16px;
+    color: rgba(240,235,224,0.6);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
   .contact-cta {
     display: inline-block;
     font-size: 16px;
@@ -810,6 +817,7 @@
     padding-bottom: 3px;
     letter-spacing: 0.02em;
     transition: color 0.2s, border-color 0.2s;
+    width: fit-content;
   }
 
   .contact-cta:hover {
@@ -817,19 +825,21 @@
   }
 
   .contact-alt {
-    font-size: 20px;
-    color: rgba(240,235,224,0.5);
+    font-size: 16px;
+    color: rgba(240,235,224,0.6);
     text-align: right;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   .contact-alt a {
-    color: var(--teal);
+    color: var(--cream);
     text-decoration: none;
-    border-bottom: 2px solid rgba(0,191,179,0.4);
-    font-size: 20px;
+    border-bottom: 2px solid var(--magenta);
+    padding-bottom: 2px;
+    font-size: 16px;
     font-weight: 500;
     transition: opacity 0.2s;
+    display: inline-block;
   }
 
   .contact-alt a:hover { opacity: 0.7; }
@@ -995,7 +1005,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#contact">contact</a></li>
+      <li><a href="https://clondon.me" target="_blank">photography</a></li>
       <li><a href="https://thefocalpointhub.com/" target="_blank">focal point</a></li>
       <li><a href="https://www.linkedin.com/in/chelsealondon/" class="nav-li" target="_blank">LinkedIn</a></li>
     </ul>
@@ -1075,17 +1085,9 @@
         <div class="wf-flag">Featured project</div>
         <div class="wf-title">Pathways</div>
         <p class="wf-body">Most leadership development programs fail because employees have no shared vocabulary for their own growth before the training begins. One workshop later, nothing has changed.<br><br>Pathways is a full L&amp;D ecosystem built around the Korn Ferry Leadership Architect framework. 38 competencies. A shared language for growth across the organization. The program leads with vocabulary because shared definitions are the foundation every other touchpoint depends on.</p>
-        <a href="https://clondon85.github.io/pathways/" class="wf-link" target="_blank">Try Pathways</a>
+        <a href="https://clondon85.github.io/pathways/" class="wf-link" target="_blank">See it in action</a>
       </div>
       <div class="wf-right">
-        <div class="wf-pills">
-          <span class="pill">LXD</span>
-          <span class="pill">ISD</span>
-          <span class="pill">Branching scenario</span>
-          <span class="pill">Coaching integration</span>
-          <span class="pill">Korn Ferry</span>
-          <span class="pill">Peer learning</span>
-        </div>
         <a href="https://clondon85.github.io/pathways/" target="_blank" class="wf-img-link">
           <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/pathways.jpg" alt="Pathways project screenshot" class="wf-img">
         </a>
@@ -1096,21 +1098,19 @@
       <a class="wi" href="https://thefocalpointhub.com/photoclass-2026/" target="_blank">
         <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/photoclass.jpg" alt="Photoclass project screenshot" class="wi-img">
         <div>
-          <span class="wi-num">02</span>
           <div class="wi-title-row"><div class="wi-title">Photoclass</div></div>
           <div class="wi-tool">Rise · MightyWorks · HTML/CSS/JS · Camtasia</div>
           <div class="wi-tags"><p>A fully text-based photography course redesigned as a multi-module interactive experience.</p><p>Passive reading was replaced with explainer videos, guided reflections, and hands-on composition activities, giving learners structured practice at every stage rather than content to scroll through.</p></div>
-          <span class="wi-try">Try this experience</span>
+          <span class="wi-try">See it in action</span>
         </div>
       </a>
       <a class="wi" href="http://ethicalleadership.s3-website-us-east-1.amazonaws.com/" target="_blank">
         <img src="https://raw.githubusercontent.com/clondon85/clondonco/main/img/leadership.jpg" alt="Ethical Leadership project screenshot" class="wi-img">
         <div>
-          <span class="wi-num">03</span>
           <div class="wi-title-row"><div class="wi-title">Ethical Leadership</div></div>
           <div class="wi-tool">Storyline · Photoshop · Descript · Synthesia</div>
           <div class="wi-tags"><p>A branching scenario for managers navigating decisions that sit at the intersection of profitability, ethics, and team leadership.</p><p>Real-time decision meters and consequence gauges make the downstream impact of each choice visible, building judgment through practice rather than instruction.</p></div>
-          <span class="wi-try">Try this experience</span>
+          <span class="wi-try">See it in action</span>
         </div>
       </a>
       <a class="wi" href="https://youtu.be/LMcBbvM1oc8?si=69_fyoMMbYeOV2NT" target="_blank">
@@ -1119,7 +1119,6 @@
           <div class="wi-yt-play">&#9654;</div>
         </div>
         <div>
-          <span class="wi-num">04</span>
           <div class="wi-title-row"><div class="wi-title">Figma Tutorial</div></div>
           <div class="wi-tool">Camtasia</div>
           <div class="wi-tags"><p>An introductory video tutorial built for graduate students with no prior design tool experience.</p><p>Focused on building enough practical fluency in Figma to begin prototyping, with scoped content that avoids overwhelming new learners with features irrelevant to their immediate goals.</p></div>
@@ -1157,8 +1156,11 @@
       <div class="contact-label">Contact</div>
       <p class="contact-hed">Interested in working together?</p>
       <p class="contact-sub">I love talking through L&D problems. Let's chat.</p>
-      <a href="mailto:chelsea@clondon.co" class="contact-cta">chelsea@clondon.co</a>
-      <p class="contact-alt">LinkedIn works too. <a href="https://www.linkedin.com/in/chelsealondon/" target="_blank">Send a message there.</a></p>
+      <div>
+        <p class="contact-email-label">Call me. Beep me. If you want to reach me.</p>
+        <a href="mailto:chelsea@clondon.co" class="contact-cta">chelsea@clondon.co</a>
+      </div>
+      <p class="contact-alt">LinkedIn works too.<br><a href="https://www.linkedin.com/in/chelsealondon/" target="_blank">Send a message there.</a></p>
     </div>
   </section>
 
